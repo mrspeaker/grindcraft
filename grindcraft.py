@@ -10,7 +10,7 @@ import random
 import pygame.mixer
 
 #### OPTIONS ####
-oneFullDay = 3 * 60 # minutes. One Minecraft day is 20 minutes.
+oneFullDay = 2 * 60 # minutes. One Minecraft day is 20 minutes.
 volume = 1.0 # 0 to 1
 resources = os.getenv("HOME") + "/Library/Application Support/minecraft/resources/"
 scaryCaveSounds = True
