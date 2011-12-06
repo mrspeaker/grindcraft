@@ -10,7 +10,7 @@ import random
 import pygame.mixer
 
 #### OPTIONS ####
-oneFullDay = 2 * 60 # minutes. One Minecraft day is 20 minutes.
+oneFullDay = 60 # minutes. One Minecraft day is 20 minutes.
 volume = 1.0 # 0 to 1
 resources = os.getenv("HOME") + "/Library/Application Support/minecraft/resources/"
 scaryCaveSounds = True
@@ -54,7 +54,7 @@ caveTime = random.randrange(oneDay, 3 * oneDay)
 songIsNext = True
 
 log("One day is " + str(oneFullDay) + " minutes.")
-log("Next song in " + mins2Days(songTime) + " days")
+log("Next song in " + mins2Days(songTime) + " days. Next cave in " + mins2Days(caveTime) + " days.")
 
 # play songs
 time.sleep(songTime)

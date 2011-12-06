@@ -1,8 +1,8 @@
 # Grindcraft
 
-A Minecraft soundtrack for your daily grind.
-by Mr Speaker. Dot net.
-v0.1
+*A Minecraft soundtrack for your daily grind.*  
+by Mr Speaker. Dot net.  
+v0.1  
 
 The problem with the real world is it's not enough like Minecraft. The fix is simple: pipe haunting and beautiful C418 tracks at various random times throughout the day, in a Minecraft-y fashion. To keep you on your toes, add in some rare-but-scary cave sounds. Voila.
 
@@ -19,7 +19,7 @@ $ python minetrack.py &
 * Pygame to play ogg files
 * Minecraft installed at default Mac location
 
-(I'm looking to reduce the requirements for ogg playing, and cross-platforming etc... any suggestions welcomed)
+(I'm looking to reduce the requirements for ogg playing, and cross-platforming etc... any suggestions welcomed)  
 (Remember, these songs have a looong silent intro - so wait a bit if it ain't working!)
 
 ## How often do the tunes play?
@@ -33,11 +33,11 @@ According to the Minecraft Wiki: "In-game music is cued by the time of day, with
 			play a random C418 track
 			ticksBeforeMusic = rand.nextInt(half a day) + half a day
 
-One day in Minecraft is about 20 minutes, but your work day is probably noticeably longer. To adjust the number of tracks you hear, change the oneFullDay variable at the top of the script. I like one day to go for a few hours. Then when the tunes drift in you feel all warm and tingly.
+One day in Minecraft is about 20 minutes, but your work day is probably noticeably longer. To adjust the number of tracks you hear, change the oneFullDay variable at the top of the script. I like one day to go a couple of hours. Then when the tunes drift in you feel all warm and tingly.
 
 To compensate for the tingly-ness, Grindcraft will also be scare you witless with random scary cave noises. In minecraft the cave noise algorithm is more complex. If you lived in a dark cave all day it would play every rand.nextInt(half a day) + quarter of a day. But it only plays if there's a really dark place near you, so it's much less often.
 
-I'm not going to check the light level of your office, so Grindcraft just plays a random cave sound once every 1 to 4 days.
+I'm not going to check the light level of your office, so Grindcraft just plays a random cave sound once every 1 to 3 days.
 
 ## Todo
 
