@@ -14,18 +14,17 @@ oneFullDay = 60 # minutes. One Minecraft day is 20 minutes.
 volume = 1.0 # 0 to 1
 resources = os.getenv("HOME") + "/Library/Application Support/minecraft/resources/"
 scaryCaveSounds = True
-playOneOnLoad = True
 debug = True
 
 #### NOPTIONS ####
 def oggs(dir):
     songs = filter(lambda file: file.endswith('.ogg'), os.listdir(resources + dir))
     return map(lambda song: [dir, song], songs)
-    
+
 def mins2Days(mins):
     return str(round(mins / 60.0 / oneFullDay, 1))
-    
-def log(msg): 
+
+def log(msg):
     if debug: print msg
 
 # Setup files
@@ -40,10 +39,8 @@ c418scary = oggs("newsound/ambient/cave")
 pygame.mixer.init()
 pygame.mixer.music.set_volume(volume)
 
-if playOneOnLoad:
-    sound = random.choice(c418)
-    pygame.mixer.music.load(os.path.join(resources, sound[0], sound[1]))
-    pygame.mixer.music.play()
+pygame.mixer.music.load(os.path.join(resources, "newsound/mob/chicken2.ogg"))
+pygame.mixer.music.play()
 
 # initial sleeps
 oneDay = oneFullDay * 60
@@ -74,9 +71,9 @@ while(True):
         songTime = random.randrange(halfADay, oneDay)
     else:
         songTime = songTime - caveTime
-        caveTime = random.randrange(oneDay, 3 * oneDay)
+        caveTime = random.randrange(oneDay, 2 * oneDay)
     songIsNext = True if not scaryCaveSounds else songTime < caveTime
-    
+
     log("Next song in " + mins2Days(songTime) + " days. Next cave in " + mins2Days(caveTime) + " days.")
     time.sleep(songTime if songIsNext else caveTime)
 

@@ -26,18 +26,18 @@ $ python minetrack.py &
 
 According to the Minecraft Wiki: "In-game music is cued by the time of day, with a random track being played at sunrise, sunset, noon and midnight.". But this is nonsense. A brief reverse-engineering of the Minecraft sound engine shows something like so:
 
-	ticksBeforeMusic = rand.nextInt(half a day) // (one Minecraft day is 24000 ticks)
-	every tick:
-		subtract 1 from ticksBeforeMusic.
-		if ticksBeforeMusic == 0:
-			play a random C418 track
-			ticksBeforeMusic = rand.nextInt(half a day) + half a day
+    ticksBeforeMusic = rand.nextInt(half a day) // (one Minecraft day is 24000 ticks)
+    every tick:
+        subtract 1 from ticksBeforeMusic.
+        if ticksBeforeMusic == 0:
+            play a random C418 track
+            ticksBeforeMusic = rand.nextInt(half a day) + half a day
 
 One day in Minecraft is about 20 minutes, but your work day is probably noticeably longer. To adjust the number of tracks you hear, change the oneFullDay variable at the top of the script. I like one day to go a couple of hours. Then when the tunes drift in you feel all warm and tingly.
 
 To compensate for the tingly-ness, Grindcraft will also be scare you witless with random scary cave noises. In minecraft the cave noise algorithm is more complex. If you lived in a dark cave all day it would play every rand.nextInt(half a day) + quarter of a day. But it only plays if there's a really dark place near you, so it's much less often.
 
-I'm not going to check the light level of your office, so Grindcraft just plays a random cave sound once every 1 to 3 days.
+I'm not going to check the light level of your office, so Grindcraft just plays a random cave sound once every 1 to 2 days.
 
 ## Todo
 
