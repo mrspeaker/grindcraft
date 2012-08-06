@@ -8,7 +8,7 @@ The problem with the real world is it's not enough like Minecraft. The fix is si
 
 ## To play:
 
-$ python minetrack.py &
+$ python grindcraft.py &
 
 * Set "debug" to False if you don't want to see the time info
 * Set the oneFullDay to vary the amount of tracks (see below)
